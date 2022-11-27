@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chromedriver": "^107.0.3",
+    "mocha": "^10.1.0",
+    "selenium-webdriver": "^4.6.0"
+  }
+}
