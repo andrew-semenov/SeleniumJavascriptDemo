@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --timeout 10000"
   },
   "dependencies": {
     "chromedriver": "^107.0.3",

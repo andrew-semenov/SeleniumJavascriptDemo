@@ -2,14 +2,13 @@ const lambdaTestPage = require('../pageObjects/lambdaTestPage')
 const {By, Key} = require('selenium-webdriver')
 
 describe('add another todo tests', function(){
-    beforeEach(function(){
-        //
+    beforeEach(function(){})
+
+    afterEach(function(){
+        // close the browser
+        driver.quit();
     })
 
-    afterEach(async function(){
-        //
-        // await driver.quit();
-    })
 
     it('Successfully adds another todo to application', async function(){
         const basicURL = 'https://lambdatest.github.io/sample-todo-app/';

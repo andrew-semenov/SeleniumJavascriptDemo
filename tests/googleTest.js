@@ -1,85 +1,18 @@
-// const { By, Builder } = require('selenium-webdriver');
-// const { suite } = require('selenium-webdriver/testing');
-// const assert = require("assert");
-
 const googleSearchPage = require("../pageObjects/googlePage")
 
 
-describe('Search for a text via google search', function(){
-    beforeEach(function(){
-        // 
-    })
+describe('Sum operation via google search', function(){
+    beforeEach(function(){})
 
     afterEach(function(){
         // close the browser
-        // driver.quit();
+        driver.quit()
     })
 
-    it('test', function(){
+    it('Sum two numbers', async function(){
         const baseURL = 'https://www.google.com/';
-        googleSearchPage.open(baseURL);
-        googleSearchPage.enter_search('Test the test');
+        await googleSearchPage.open(baseURL);
+        await googleSearchPage.enter_search('1+4');
+        await googleSearchPage.assertSumResult('5');
     })
 })
-
-// suite(function(env) {
-//     describe('First script', function() {
-//         let driver;
-
-//         before(async function() {
-//             driver = await new Builder().forBrowser('chrome').build();
-//         });
-
-//         after(async () => await driver.quit());
-
-//         it('First Selenium script', async function() {
-//             await driver.get('https://www.selenium.dev/selenium/web/web-form.html');
-
-//             let title = await driver.getTitle();
-//             assert.equal("Web form", title);
-
-//             await driver.manage().setTimeouts({ implicit: 500 });
-
-//             let textBox = await driver.findElement(By.name('my-text'));
-//             let submitButton = await driver.findElement(By.css('button'));
-
-//             await textBox.sendKeys('Selenium');
-//             await submitButton.click();
-
-//             let message = await driver.findElement(By.id('message'));
-//             let value = await message.getText();
-//             assert.equal("Received!", value);
-//         });
-
-//     });
-
-//     describe('Search for a First script', function() {
-//         let driver;
-
-//         before(async function() {
-//             driver = await new Builder().forBrowser('chrome').build();
-//         });
-
-//         after(async () => await driver.quit());
-
-//         it('First Selenium script', async function() {
-//             await driver.get('https://www.selenium.dev/selenium/web/web-form.html');
-
-//             let title = await driver.getTitle();
-//             assert.equal("Web form", title);
-
-//             await driver.manage().setTimeouts({ implicit: 500 });
-
-//             let textBox = await driver.findElement(By.name('my-text'));
-//             let submitButton = await driver.findElement(By.css('button'));
-
-//             await textBox.sendKeys('Selenium');
-//             await submitButton.click();
-
-//             let message = await driver.findElement(By.id('message'));
-//             let value = await message.getText();
-//             assert.equal("Received!", value);
-//         });
-
-//     });
-// });
